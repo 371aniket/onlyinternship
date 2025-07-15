@@ -1,0 +1,141 @@
+/* Internships Page Styles */
+.internships-page {
+    width: 100vw;
+    margin-top: 110vh;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Internships Section */
+.internships-section {
+    background: white;
+    padding: 6rem 0;
+    width: 100vw;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.internships-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.internships-logo-img {
+    height: 80px;
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.internships-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #333;
+}
+
+.internship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.internship-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.internship-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.company {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.card-details {
+    margin-bottom: 1.5rem;
+}
+
+.card-details p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: #f8f9fa;
+    color: #667eea;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .internship-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .internships-section h2 {
+        font-size: 2rem;
+    }
+
+    .card-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .internships-section {
+        padding: 4rem 0;
+    }
+
+    .internship-card {
+        padding: 1.5rem;
+    }
+
+    .card-header h3 {
+        font-size: 1.3rem;
+    }
+}

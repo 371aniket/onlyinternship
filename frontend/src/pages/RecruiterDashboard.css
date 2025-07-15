@@ -1,0 +1,171 @@
+.recruiter-dashboard-container {
+    max-width: 700px;
+    margin: 2.5rem auto;
+    padding: 2.5rem 2rem 2rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e6e9f0 100%);
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(60, 72, 88, 0.13);
+    margin-top: 150vh;
+}
+
+.recruiter-dashboard-container h2 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #4c44b6;
+    margin-bottom: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.recruiter-dashboard-container h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.recruiter-dashboard-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(60, 72, 88, 0.07);
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+}
+
+.recruiter-dashboard-form input,
+.recruiter-dashboard-form select,
+.recruiter-dashboard-form textarea {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1.5px solid #e9ecef;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+    background: #f8f9fa;
+    color: #444;
+}
+
+.recruiter-dashboard-form input:focus,
+.recruiter-dashboard-form select:focus,
+.recruiter-dashboard-form textarea:focus {
+    border: 1.5px solid #667eea;
+}
+
+.recruiter-dashboard-form button {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.recruiter-dashboard-form button:hover {
+    background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.recruiter-dashboard-message {
+    margin: 1.2rem 0;
+    color: #22bb33;
+    font-weight: 600;
+    font-size: 1.08rem;
+    background: #e6f9ed;
+    border-radius: 12px;
+    padding: 1.1rem;
+    box-shadow: 0 2px 8px rgba(76, 68, 182, 0.07);
+}
+
+.recruiter-dashboard-message.error {
+    color: #ff6b6b;
+    background: #fff0f0;
+}
+
+.recruiter-dashboard-internship-list {
+    list-style: none;
+    padding: 0;
+}
+
+.recruiter-dashboard-internship-item {
+    margin-bottom: 2rem;
+    border: 1.5px solid #e9ecef;
+    padding: 1.2rem 1rem 1rem 1rem;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(60, 72, 88, 0.07);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.recruiter-dashboard-internship-item:hover {
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.13);
+    transform: translateY(-3px) scale(1.01);
+}
+
+.recruiter-dashboard-internship-item button {
+    background: linear-gradient(90deg, #ffb347 0%, #ff6b6b 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.7rem;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.recruiter-dashboard-internship-item button:hover {
+    background: linear-gradient(90deg, #ff6b6b 0%, #ffb347 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.recruiter-dashboard-applicants {
+    margin-top: 1.2rem;
+    background: #f4f8ff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.07);
+}
+
+.recruiter-dashboard-applicant-item {
+    border: 1.5px solid #e9ecef;
+    margin: 8px 0;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(60, 72, 88, 0.04);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.recruiter-dashboard-applicant-item:hover {
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.10);
+    transform: translateY(-1px) scale(1.01);
+}
+
+.recruiter-dashboard-applicant-status {
+    margin-top: 4px;
+    display: inline-block;
+}
+
+.recruiter-dashboard-applicant-status select {
+    margin-left: 0.5rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    border: 1.2px solid #e9ecef;
+    font-size: 1rem;
+    background: #f8f9fa;
+    color: #444;
+    transition: border 0.2s;
+}
+
+.recruiter-dashboard-applicant-status select:focus {
+    border: 1.2px solid #667eea;
+}
