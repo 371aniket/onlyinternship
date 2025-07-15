@@ -3,6 +3,7 @@ import './Signup.css';
 import googleLogo from '../assets/google-logo-icon-gsuite-hd-701751694791470gzbayltphh.png';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
+import { BACKEND_URL } from '../config';
 
 const Signup = () => {
     const [firstName, setFirstName] = useState('');
@@ -23,10 +24,10 @@ const Signup = () => {
         }
         setError('');
         try {
-            let url = 'http://localhost:5000/api/users/signup';
+            let url = `${BACKEND_URL}/api/users/signup`;
             let body = { name: firstName + ' ' + lastName, email, password };
             if (role === 'recruiter') {
-                url = 'http://localhost:5000/api/recruiters/signup';
+                url = `${BACKEND_URL}/api/recruiters/signup`;
                 body.company = company;
             }
             const res = await fetch(url, {

@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext, useRef } from 'react';
 import { UserContext } from '../context/UserContext';
 import './RecruiterDashboard.css';
+import { BACKEND_URL } from '../config';
 
 const RecruiterDashboard = () => {
     const { user } = useContext(UserContext);
@@ -76,7 +77,7 @@ const RecruiterDashboard = () => {
     // Fetch internships posted by this recruiter
     useEffect(() => {
         if (!user) return;
-        fetch('http://localhost:5000/api/internships/all')
+        fetch(`${BACKEND_URL}/api/internships/all`)
             .then(res => res.json())
             .then(data => {
                 // Only show internships posted by this recruiter
@@ -121,7 +122,7 @@ const RecruiterDashboard = () => {
             setMessage('Recruiter info missing. Please log in again.');
             return;
         }
-        const res = await fetch('http://localhost:5000/api/internships/post', {
+        const res = await fetch(`${BACKEND_URL}/api/internships/post`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -150,7 +151,7 @@ const RecruiterDashboard = () => {
 
     const handleViewApplicants = async (internshipId) => {
         setLoadingApplicants(internshipId);
-        const res = await fetch(`http://localhost:5000/api/internships/${internshipId}/applicants`);
+        const res = await fetch(`${BACKEND_URL}/api/internships/${internshipId}/applicants`);
         if (res.ok) {
             const data = await res.json();
             setApplicants(prev => ({ ...prev, [internshipId]: data }));
@@ -159,7 +160,7 @@ const RecruiterDashboard = () => {
     };
 
     const handleStatusChange = async (internshipId, applicantId, newStatus) => {
-        await fetch(`http://localhost:5000/api/internships/${internshipId}/applicants/${applicantId}/status`, {
+        await fetch(`${BACKEND_URL}/api/internships/${internshipId}/applicants/${applicantId}/status`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ status: newStatus })

@@ -3,6 +3,7 @@ import './Login.css';
 import googleLogo from '../assets/google-logo-icon-gsuite-hd-701751694791470gzbayltphh.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
+import { BACKEND_URL } from '../config';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -20,9 +21,9 @@ const Login = () => {
         }
         setError('');
         try {
-            let url = 'http://localhost:5000/api/users/login';
+            let url = `${BACKEND_URL}/api/users/login`;
             if (role === 'recruiter') {
-                url = 'http://localhost:5000/api/recruiters/login';
+                url = `${BACKEND_URL}/api/recruiters/login`;
             }
             const res = await fetch(url, {
                 method: 'POST',

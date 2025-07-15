@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 import '../../pages/RecruiterDashboard.css';
 import { useNavigate } from 'react-router-dom';
+import { BACKEND_URL } from '../../config';
 
 const jobProfileOptions = [
     'Web Development Intern', 'App Development Intern', 'Software Development Intern (SDE)', 'Data Science Intern',
@@ -83,7 +84,7 @@ const PostInternship = () => {
             setMessage('Recruiter info missing. Please log in again.');
             return;
         }
-        const res = await fetch('http://localhost:5000/api/internships/post', {
+        const res = await fetch(`${BACKEND_URL}/api/internships/post`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

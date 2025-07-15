@@ -3,6 +3,7 @@ import logo from '../assets/logo.webp';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
+import { BACKEND_URL } from '../config';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = () => {
     // Only fetch notifications for students (not recruiters)
     useEffect(() => {
         if (user && user._id && !user.isRecruiter) {
-            fetch(`http://localhost:5000/api/notifications/${user._id}`)
+            fetch(`${BACKEND_URL}/api/notifications/${user._id}`)
                 .then(res => res.json())
                 .then(data => setNotifications(data));
         }
@@ -31,11 +32,11 @@ const Navbar = () => {
             // Mark all as read
             await Promise.all(
                 notifications.filter(n => !n.read).map(n =>
-                    fetch(`http://localhost:5000/api/notifications/read/${n._id}`, { method: 'PATCH' })
+                    fetch(`${BACKEND_URL}/api/notifications/read/${n._id}`, { method: 'PATCH' })
                 )
             );
             // Refetch notifications
-            fetch(`http://localhost:5000/api/notifications/${user._id}`)
+            fetch(`${BACKEND_URL}/api/notifications/${user._id}`)
                 .then(res => res.json())
                 .then(data => setNotifications(data));
         }

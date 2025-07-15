@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 import '../../pages/Internships.css';
+import { BACKEND_URL } from '../../config';
 
 const PostedInternships = () => {
     const { user } = useContext(UserContext);
@@ -8,7 +9,7 @@ const PostedInternships = () => {
 
     useEffect(() => {
         if (!user) return;
-        fetch('http://localhost:5000/api/internships/all')
+        fetch(`${BACKEND_URL}/api/internships/all`)
             .then(res => res.json())
             .then(data => {
                 setInternships(data.filter(i => i.recruiter && i.recruiter.email === user.email));

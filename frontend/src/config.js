@@ -1,0 +1,1 @@
+export const BACKEND_URL = "https://onlyinternship-1.onrender.com"; 

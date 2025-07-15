@@ -2,6 +2,7 @@ import logo from '../assets/logo.webp';
 import './Internships.css';
 import { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../context/UserContext';
+import { BACKEND_URL } from '../config';
 
 const Internships = () => {
     const { user } = useContext(UserContext);
@@ -11,7 +12,7 @@ const Internships = () => {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/internships/all')
+        fetch(`${BACKEND_URL}/api/internships/all`)
             .then(res => res.json())
             .then(data => {
                 setInternships(data);
@@ -29,7 +30,7 @@ const Internships = () => {
             setMessage('Please login as a student to apply.');
             return;
         }
-        const res = await fetch('http://localhost:5000/api/internships/apply', {
+        const res = await fetch(`${BACKEND_URL}/api/internships/apply`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ internshipId, userId: user._id })
