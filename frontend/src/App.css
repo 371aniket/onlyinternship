@@ -30,6 +30,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  padding-top: 0;
+  /* Ensure all content starts just below the navbar */
   /* Account for fixed navbar */
 }
 

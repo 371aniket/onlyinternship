@@ -1,8 +1,8 @@
 .signup-page {
     min-height: 100vh;
     display: block;
+    margin-top: 100px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    margin-top: 94vh;
 }
 
 .signup-center-wrapper {
